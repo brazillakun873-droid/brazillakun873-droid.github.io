@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kegiatan | Pramuka SMKN 6 Jember</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="WhatsApp_Image_2026-04-07_at_10.59.13-removebg-preview (1).png" alt="Logo Pramuka smkn 6 jember">
+                <img src="Untitled_design-removebg-preview (1) copy.png" alt="Logo smkn 6 jember">
+                <div class="logo-text">
+                    <span class="scout-title">PRAMUKA</span>
+                    <span class="school-title">SMKN 6 JEMBER</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="page praskanam.html">Beranda</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeri Kegiatan</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-image">
+                    <img src="WhatsApp Image 2026-04-07 at 10.59.10 (1).jpeg" alt="Latihan gabungan bersama sma 1 tanggul">
+                </div>
+
+                <div class="gallery-image">
+                    <img src="WhatsApp Image 2026-04-07 at 10.59.10.jpeg" alt="Pelantikan bantara serentak di smkn 6 jember">
+                </div>
+
+                <div class="gallery-image">
+                    <img src="WhatsApp Image 2026-04-07 at 10.59.13 (1).jpeg" alt="upacara ulang tahun pramuka di alun-alun tanggul">
+                </div>
+
+                <div class="gallery-image">
+                    <img src="020251102_114317_lmc_8.4.NIGHT (1).jpg.jpeg" alt="pelantikan bantara dan laksana">
+                </div>
+
+                <div class="gallery-image">
+                    <img src="WhatsApp Image 2026-04-07 at 10.59.12 (1).jpeg" alt="Latihan rutin pramuka di lapangan smkn 6 jember">
+                </div>
+                <div class="gallery-image">
+                    <img src="WhatsApp Image 2026-04-20 at 08.28.22.jpeg" alt="Pelantikan dewan 2025">
+                </div>
+
+                <!-- Struktur untuk foto tambahan akan ditambahkan di sini -->
+                <!-- Contoh: 
+                <div class="gallery-image">
+                    <img src="nama-foto-baru.jpg" alt="Deskripsi foto baru">
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Preview Foto">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="WhatsApp_Image_2026-04-07_at_10.59.13-removebg-preview (1).png" alt="Logo Pramuka smkn 6 jember">
+                    <img src="Untitled_design-removebg-preview (1).png" alt="Logo SMKN 6 Jember">
+                    <p>Jl. PB. Sudirman No. 114, Jember, Jawa Timur. Mencetak generasi unggul berlandaskan iman dan takwa.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="page praskanam.html#home">Beranda</a></li>
+                        <li><a href="page praskanam.html#about">Tentang</a></li>
+                        <li><a href="page praskanam.html#activities">Kegiatan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="page praskanam.html#contact">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Kontak Kami</h4>
+                    <p><i class="fas fa-phone"></i> +62 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> pramuka@smkn6jember.sch.id</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. PB. Sudirman No. 114, Jember</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pramuka SMKN 6 Jember. Satyaku Kudarmakan, Darmaku Kubaktikan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+        const closeLightbox = document.getElementById("closeLightbox");
+
+        document.querySelectorAll(".gallery-image img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.classList.add("show");
+                lightboxImg.src = img.src;
+
+                lightboxCaption.textContent = img.alt;
+            });
+        });
+
+        closeLightbox.addEventListener("click", () => {
+            lightbox.classList.remove("show");
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove("show");
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+</html>
